@@ -1,0 +1,201 @@
+/* -------- General Reset -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2a1f3d, #312e81);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* -------- Container -------- */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s ease-in-out;
+  overflow: hidden;
+}
+
+/* Active state switches login/register */
+.container.active .form-box.Login {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.container.active .form-box.Register {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* -------- Curved Shapes -------- */
+.curved-shape,
+.curved-shape2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  transition: 1s ease;
+}
+
+.curved-shape {
+  width: 700px;
+  height: 700px;
+  background: rgba(79, 70, 229, 0.3);
+  top: -200px;
+  left: -200px;
+}
+
+.curved-shape2 {
+  width: 700px;
+  height: 700px;
+  background: rgba(236, 72, 153, 0.3);
+  bottom: -200px;
+  right: -200px;
+}
+
+/* -------- Form Box -------- */
+.form-box {
+  position: absolute;
+  width: 350px;
+  padding: 40px 40px 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  transition: 1s ease;
+  z-index: 2;
+}
+
+.form-box.Login {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.form-box.Register {
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* -------- Headings -------- */
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2em;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* -------- Input Fields -------- */
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #60a5fa;
+}
+
+.input-box label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  left: 8px;
+  font-size: 0.8em;
+  color: #93c5fd;
+}
+
+/* -------- SVG Icons -------- */
+.input-box svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+}
+
+/* -------- Buttons -------- */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #2563eb, #7e22ce);
+}
+
+/* -------- Links -------- */
+.regi-link {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 15px;
+}
+
+.regi-link a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.regi-link a:hover {
+  text-decoration: underline;
+}
+
+/* -------- Info Text (Optional) -------- */
+.info-content {
+  display: none;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 768px) {
+  .form-box {
+    width: 90%;
+  }
+  .curved-shape,
+  .curved-shape2 {
+    width: 400px;
+    height: 400px;
+    filter: blur(60px);
+  }
+}

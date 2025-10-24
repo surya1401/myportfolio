@@ -152,12 +152,12 @@ export default function Portfolio() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <p className="text-lg text-white/80 leading-relaxed">
-                    I &apos m a passionate full-stack developer with over 5 years of experience creating 
+                    I am a passionate full-stack developer with over 5 years of experience creating 
                     digital solutions that make a difference. My journey started with curiosity about 
                     how websites work and evolved into a love for building complex applications.
                   </p>
                   <p className="text-lg text-white/80 leading-relaxed">
-                    When I &apos m not coding, you &apos ll find me exploring new technologies, contributing to 
+                    When I am not coding, you all find me exploring new technologies, contributing to 
                     open-source projects, or sharing knowledge with the developer community.
                   </p>
                 </div>
@@ -236,10 +236,10 @@ export default function Portfolio() {
           <section className="min-h-screen flex items-center justify-center px-6 py-20">
             <div className="max-w-2xl w-full text-center">
               <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Let &apos s Connect
+                Let us Connect
               </h2>
               <p className="text-xl text-white/80 mb-12">
-                Ready to bring your ideas to life? Let &apos s start a conversation.
+                Ready to bring your ideas to life? Let us start a conversation.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 {[
