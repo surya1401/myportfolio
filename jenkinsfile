@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -19,44 +18,36 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker image..."
-                bat "docker build -t %DOCKER_IMAGE% ."
+                sh "docker build -t ${DOCKER_IMAGE} ."
             }
         }
 
         stage('Stop and Remove Old Container') {
             steps {
-                echo "Stopping and removing old container if exists..."
-                bat '''
-                @echo off
-                docker ps -q --filter "name=%CONTAINER_NAME%" | findstr . >nul 2>&1
-                if %ERRORLEVEL%==0 (
-                    docker stop %CONTAINER_NAME%
-                    docker rm %CONTAINER_NAME%
-                ) else (
-                    echo Container %CONTAINER_NAME% not running
-                )
-                exit 0
-                '''
+                echo "Stopping old container..."
+                sh """
+                if [ \$(docker ps -aq -f name=${CONTAINER_NAME}) ]; then
+                    docker stop ${CONTAINER_NAME} || true
+                    docker rm ${CONTAINER_NAME} || true
+                fi
+                """
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                echo "Running new container..."
-                bat '''
-                docker run -d -p 3000:3000 --name %CONTAINER_NAME% %DOCKER_IMAGE%
-                exit 0
-                '''
+                echo "Starting new container..."
+                sh "docker run -d -p 3000:3000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}"
             }
         }
     }
 
     post {
         success {
-            echo "Next.js app deployed successfully on http://localhost:3000"
+            echo "✅ App deployed successfully: http://localhost:3000"
         }
         failure {
-            echo "Deployment failed. Check console output."
+            echo "❌ Deployment failed. Check logs."
         }
     }
 }
