@@ -18,36 +18,39 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker image..."
-                sh "docker build -t ${DOCKER_IMAGE} ."
+                bat "docker build -t ${DOCKER_IMAGE} ."
             }
         }
 
         stage('Stop and Remove Old Container') {
             steps {
-                echo "Stopping old container..."
-                sh """
-                if [ \$(docker ps -aq -f name=${CONTAINER_NAME}) ]; then
-                    docker stop ${CONTAINER_NAME} || true
-                    docker rm ${CONTAINER_NAME} || true
-                fi
+                echo "Stopping and removing old container if it exists..."
+                bat """
+                docker ps -q --filter "name=${CONTAINER_NAME}" >nul
+                if %ERRORLEVEL%==0 (
+                    docker stop ${CONTAINER_NAME}
+                    docker rm ${CONTAINER_NAME}
+                ) else (
+                    echo Container not running
+                )
                 """
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                echo "Starting new container..."
-                sh "docker run -d -p 3000:3000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}"
+                echo "Running new container..."
+                bat "docker run -d -p 3000:3000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}"
             }
         }
     }
 
     post {
         success {
-            echo "✅ App deployed successfully: http://localhost:3000"
+            echo "✅ Next.js app deployed successfully at: http://localhost:3000"
         }
         failure {
-            echo "❌ Deployment failed. Check logs."
+            echo "❌ Deployment failed. Check console logs."
         }
     }
 }
