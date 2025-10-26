@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "Checking out code..."
-                git branch: 'main', url: 'https://github.com/prakash735/local.git'
+                git branch: 'main', url: 'https://github.com/surya1401/myprofile.git'
             }
         }
 
