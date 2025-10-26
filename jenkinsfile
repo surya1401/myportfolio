@@ -3,8 +3,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "nextjs-demo:local"
-        CONTAINER_NAME = "nextjs-demo"
+        DOCKER_IMAGE = "myportfolio:local"
+        CONTAINER_NAME = "myportfolio"
     }
 
     stages {
