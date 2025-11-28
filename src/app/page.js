@@ -45,8 +45,8 @@ export default function Portfolio() {
   ];
 
   const skills = [
-    { name: "JavaScript", level: 90 },
-    { name: "React/Next.js", level: 85 },
+    { name: "JavaScript", level: 50 },
+    { name: "Next.js", level: 85 },
     { name: "Node.js", level: 80 },
     { name: "Python", level: 75 },
     { name: "UI/UX Design", level: 70 }
@@ -118,7 +118,7 @@ export default function Portfolio() {
                 Surya
               </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-                Full-Stack Developer & Creative Problem Solver
+                Front-end Developer & UI/UX Designer 
               </p>
               <p className="text-lg text-white/60 mb-12 max-w-2xl mx-auto">
                 Crafting digital experiences with modern technologies and innovative solutions
@@ -243,7 +243,7 @@ export default function Portfolio() {
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 {[
-                  { icon: "📧", label: "Email", value: "hello@surya.dev" },
+                  { icon: "📧", label: "Email", value: "hello.suryap@gmail.com" },
                   { icon: "📱", label: "Phone", value: "+91 9066083466" },
                   { icon: "🌍", label: "Location", value: "Bangalore" }
                 ].map((contact, index) => (
