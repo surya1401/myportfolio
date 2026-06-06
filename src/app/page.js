@@ -235,10 +235,10 @@ export default function Portfolio() {
           <section className="min-h-screen flex items-center justify-center px-6 py-20">
             <div className="max-w-2xl w-full text-center">
               <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Let's Connect
+                Lets Connect
               </h2>
               <p className="text-xl text-white/80 mb-12">
-                Ready to bring your ideas to life? Let's start a conversation.
+                Ready to bring your ideas to life? Lets start a conversation.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 {[
