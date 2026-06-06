@@ -28,27 +28,28 @@ export default function Portfolio() {
 
   const projects = [
     { 
-      title: "E-Commerce Platform", 
-      tech: "Next.js, Tailwind, Stripe",
-      description: "Full-stack e-commerce solution with payment integration"
+      title: "Hospital Management System", 
+      tech: "HTML, CSS, PHP, MySQL",
+      description: "Developed a hospital management system for managing patient records, appointments, doctor schedules, and hospital operations."
     },
     { 
-      title: "Task Management App", 
-      tech: "React, Node.js, MongoDB",
-      description: "Collaborative task management with real-time updates"
+      title: "Password Strength Analysis", 
+      tech: "Python",
+      description: "Built a password security analyzer that evaluates password strength and provides recommendations to improve security awareness."
     },
     { 
-      title: "Weather Dashboard", 
-      tech: "Vue.js, Chart.js, API",
-      description: "Interactive weather visualization dashboard"
+      title: "Text-to-Image Synthesis for Improved Image Captioning", 
+      tech: "Python, Streamlit, COCO Dataset, Deep Learning",
+      description: "Developed an AI-powered image captioning system integrated with text-to-image synthesis using machine learning techniques."
     }
   ];
 
   const skills = [
-    { name: "JavaScript", level: 90 },
-    { name: "React/Next.js", level: 85 },
-    { name: "Node.js", level: 80 },
-    { name: "Python", level: 75 },
+    { name: "Front-End Development", level: 90 },
+    { name: "HTML/CSS", level: 90 },
+    { name: "Java", level: 80 },
+    { name: "Python", level: 80 },
+    { name: "DevOps", level: 75 },
     { name: "UI/UX Design", level: 70 }
   ];
 
@@ -76,7 +77,7 @@ export default function Portfolio() {
           <div className="container mx-auto px-6 py-4">
             <div className="flex justify-between items-center">
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Portfolio
+                SURYA P 
               </div>
               <div className="hidden md:flex space-x-8">
                 {navItems.map((item) => (
@@ -114,20 +115,17 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
-                Surya
+               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+                Surya P
               </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-                Full-Stack Developer & Creative Problem Solver
+                Front-End Developer & DevOps Enthusiast
               </p>
               <p className="text-lg text-white/60 mb-12 max-w-2xl mx-auto">
-                Crafting digital experiences with modern technologies and innovative solutions
+                Motivated BCA graduate with hands-on experience in Web Development, DevOps, and AI-powered applications. Passionate about building innovative digital solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button 
-                  onClick={() => setActiveSection('projects')}
-                  className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                >
+                <button onClick={() => setActiveSection('projects')} className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                   <span className="relative z-10">View My Work</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
@@ -152,13 +150,10 @@ export default function Portfolio() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <p className="text-lg text-white/80 leading-relaxed">
-                    I am a passionate full-stack developer with over 5 years of experience creating 
-                    digital solutions that make a difference. My journey started with curiosity about 
-                    how websites work and evolved into a love for building complex applications.
+                    I am a motivated Bachelor of Computer Applications graduate with practical experience in web development, DevOps, and artificial intelligence projects.
                   </p>
                   <p className="text-lg text-white/80 leading-relaxed">
-                    When I am not coding, you all find me exploring new technologies, contributing to 
-                    open-source projects, or sharing knowledge with the developer community.
+                    Skilled in Java, Python, HTML, CSS, PHP, UI/UX Design, and DevOps practices. I enjoy solving real-world problems through technology and continuously learning modern development tools.
                   </p>
                 </div>
                 <div className="relative">
@@ -243,9 +238,9 @@ export default function Portfolio() {
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 {[
-                  { icon: "📧", label: "Email", value: "hello@surya.dev" },
+                  { icon: "📧", label: "Email", value: "Surya46668@gmail.com" },
                   { icon: "📱", label: "Phone", value: "+91 9066083466" },
-                  { icon: "🌍", label: "Location", value: "Bangalore" }
+                  { icon: "🌍", label: "Location", value: "Bangalore, Karnataka" }
                 ].map((contact, index) => (
                   <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
                     <div className="text-3xl mb-3">{contact.icon}</div>
@@ -255,10 +250,15 @@ export default function Portfolio() {
                 ))}
               </div>
               <div className="flex justify-center space-x-6">
-                {["GitHub", "LinkedIn", "Twitter"].map((social) => (
-                  <button key={social} className="w-12 h-12 bg-white/10 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all duration-300">
-                    <span className="text-sm">🔗</span>
-                  </button>
+                {[
+                  { label: "GitHub", url: "https://github.com/surya1401" },
+                  { label: "LinkedIn", url: "https://www.linkedin.com/in/surya-p14" },
+                  { label: "Portfolio", url: "https://myportfolio-ashen-seven.vercel.app" }
+                ].map((social) => (
+                  <a key={social.label} href={social.url} target="_blank" rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white/10 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all duration-300 text-sm text-white">
+                    {social.label[0]}
+                  </a>
                 ))}
               </div>
             </div>
