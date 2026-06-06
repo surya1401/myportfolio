@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from 'react';
-import Image from "next/image";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
@@ -77,7 +76,7 @@ export default function Portfolio() {
           <div className="container mx-auto px-6 py-4">
             <div className="flex justify-between items-center">
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                SURYA P 
+                Surya P
               </div>
               <div className="hidden md:flex space-x-8">
                 {navItems.map((item) => (
@@ -115,7 +114,7 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
-               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+              <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
                 Surya P
               </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
@@ -125,7 +124,10 @@ export default function Portfolio() {
                 Motivated BCA graduate with hands-on experience in Web Development, DevOps, and AI-powered applications. Passionate about building innovative digital solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onClick={() => setActiveSection('projects')} className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <button 
+                  onClick={() => setActiveSection('projects')}
+                  className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                >
                   <span className="relative z-10">View My Work</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
@@ -150,10 +152,12 @@ export default function Portfolio() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <p className="text-lg text-white/80 leading-relaxed">
-                    I am a motivated Bachelor of Computer Applications graduate with practical experience in web development, DevOps, and artificial intelligence projects.
+                    I am a motivated Bachelor of Computer Applications graduate with practical experience
+                    in web development, DevOps, and artificial intelligence projects.
                   </p>
                   <p className="text-lg text-white/80 leading-relaxed">
-                    Skilled in Java, Python, HTML, CSS, PHP, UI/UX Design, and DevOps practices. I enjoy solving real-world problems through technology and continuously learning modern development tools.
+                    Skilled in Java, Python, HTML, CSS, PHP, UI/UX Design, and DevOps practices. I enjoy
+                    solving real-world problems through technology and continuously learning modern development tools.
                   </p>
                 </div>
                 <div className="relative">
@@ -231,10 +235,10 @@ export default function Portfolio() {
           <section className="min-h-screen flex items-center justify-center px-6 py-20">
             <div className="max-w-2xl w-full text-center">
               <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Let us Connect
+                Lets Connect
               </h2>
               <p className="text-xl text-white/80 mb-12">
-                Ready to bring your ideas to life? Let us start a conversation.
+                Ready to bring your ideas to life? Lets start a conversation.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 {[
@@ -255,8 +259,13 @@ export default function Portfolio() {
                   { label: "LinkedIn", url: "https://www.linkedin.com/in/surya-p14" },
                   { label: "Portfolio", url: "https://myportfolio-ashen-seven.vercel.app" }
                 ].map((social) => (
-                  <a key={social.label} href={social.url} target="_blank" rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white/10 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all duration-300 text-sm text-white">
+                  <a
+                    key={social.label}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white/10 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all duration-300 text-sm text-white"
+                  >
                     {social.label[0]}
                   </a>
                 ))}
